@@ -1,52 +1,42 @@
 [
-    {
-      "id": 1,
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "genre": ["Classic"],
-      "details": {
-        "pages": 180,
-        "publishedYear": 1925
-      }
-    },
-    {
-      "id": 2,
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "genre": ["Drama"],
-      "details": {
-        "pages": 281,
-        "publishedYear": 1960
-      }
-    },
-    {
-      "id": 3,
-      "title": "1984",
-      "author": "George Orwell",
-      "genre": ["Dystopian"],
-      "details": {
-        "pages": 328,
-        "publishedYear": 1949
-      }
-    },
-    {
-      "id": 4,
-      "title": "The Hobbit",
-      "author": "J.R.R. Tolkien",
-      "genre": ["Fantasy"],
-      "details": {
-        "pages": 310,
-        "publishedYear": 1937
-      }
-    },
-    {
-      "id": 5,
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "genre": ["Romance"],
-      "details": {
-        "pages": 279,
-        "publishedYear": 1813
-      }
-    }
-  ]
+  {
+    "id": 1,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": ["Classic"],
+    "pages": 180,
+    "publishedYear": 1925
+  },
+  {
+    "id": 2,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": ["Drama"],
+    "pages": 281,
+    "publishedYear": 1960
+  },
+  {
+    "id": 3,
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": ["Dystopian"],
+    "pages": 328,
+    "publishedYear": 1949
+  },
+  {
+    "id": 4,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": ["Fantasy"],
+    "pages": 310,
+    "publishedYear": 1937
+  },
+  {
+    "id": 5,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": ["Romance"],
+    "pages": 279,
+    "publishedYear": 1813
+  }
+]
