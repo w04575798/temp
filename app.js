@@ -1,46 +1,51 @@
-//import our required modules
+// Import necessary modules
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-//establish a connection to mongodb
 
-//establish a connection to mongodb
+// Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/bookDatabase');
 
-//define our router
+// Import routers
 var indexRouter = require('./routes/index');
-var apiRouter = require('./routes/api'); //api.js -> api
+const testRouter = require('./routes/api/test');
+const bookRouter = require('./routes/api/book');
+const usersRouter = require('./routes/api/users');
 
+// Create express app
 var app = express();
 
-// view engine setup
+// Set up view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// Middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
 app.use('/', indexRouter);
-app.use('/api', apiRouter);
+app.use('/api/test', testRouter);
+app.use('/api/book', bookRouter);
+app.use('/api/users', usersRouter);
 
-// catch 404 and forward to error handler
+
+// 404 error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// Error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // send a JSON response with error details
   res.status(err.status || 500).json({
     error: {
       message: err.message,
