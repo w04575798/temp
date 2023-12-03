@@ -5,9 +5,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+require('dotenv').config();
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/bookDatabase');
+
+mongoose.connect(process.env.DATABASE_URL);
 
 // Import routers
 var indexRouter = require('./routes/index');
