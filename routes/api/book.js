@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Book = require('../../models/book');
+
 // Get all documents
 router.get('/', async (req, res) => {
     console.log('GET /api/book route reached');
@@ -43,7 +44,7 @@ router.get('/:id', async (req, res) => {
     }
   });
   
-// Delete an existing document by Id
+  // Delete an existing document by Id
 router.delete('/:id', async (req, res) => {
   console.log('DELETE /api/book/:id route reached');
   try {
@@ -57,5 +58,30 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+//update endpoint
+// Update an existing document by Id
+router.put('/:id', async (req, res) => {
+  console.log('PUT /api/book/:id route reached');
+  try {
+    const { id } = req.params;
+
+    // Update the document based on the request body
+    const updatedBook = await Book.findOneAndUpdate({ id }, req.body, { new: true }).exec();
+
+    // Check if the document was found and updated
+    if (!updatedBook) {
+      return res.status(404).json({ message: `Document not found for ID: ${id}` });
+    }
+
+    console.log('Updated Book:', updatedBook);
+
+    res.json(updatedBook);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 module.exports = router;
