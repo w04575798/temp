@@ -61,7 +61,7 @@ router.delete('/:id', jwtMiddleware, async (req, res) => {
 
 //update endpoint
 
-router.put('/:id', jwtMiddleware,async (req, res) => {
+router.put('/:id', jwtMiddleware, async (req, res) => {
   console.log('PUT /api/book/:id route reached');
   try {
     const { id } = req.params;

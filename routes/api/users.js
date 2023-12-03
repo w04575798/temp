@@ -47,6 +47,7 @@ router.post('/login', async (req, res) => {
 
     // Generate a JWT token using the secret key from the environment variable
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
+    console.log('Token:', token);
 
     // Set the token in the response header
     res.header('x-auth-token', token);

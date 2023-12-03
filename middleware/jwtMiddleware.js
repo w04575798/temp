@@ -1,24 +1,22 @@
+// jwtMiddleware.js
 const jwt = require('jsonwebtoken');
 
 const jwtMiddleware = (req, res, next) => {
-  // check existence of JWT in request header
   const token = req.header('x-auth-token');
 
   if (!token) {
-    // respond with  401 Unauthorized HTTP response
+    console.error('Access denied: Missing token');
     return res.status(401).json({ error: 'Access is Denied' });
   }
 
   try {
-    // verify JWT valid
+    // Verify the token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-
-    // Allows the request if the JWT valid
-    next();
+    req.user = decoded; // Attach user information to the request object
+    next(); // Continue to the next middleware or route handler
   } catch (error) {
-    // If token invalid, respond 401 
-    res.status(401).json({ error: 'Access is Denied' });
+    console.error('Access denied: Invalid token', error.message);
+    return res.status(401).json({ error: 'Access is Denied' });
   }
 };
 
