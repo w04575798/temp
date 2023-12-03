@@ -1,12 +1,8 @@
-var express = require('express');
-var router = express.Router();
+// api/users.js
 
-/* GET users listing. */
-router.get('/', function(req, res) {
-  res.send('respond with a resource');
-});
+const express = require('express');
+const router = express.Router();
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 
-router.get('/foo', (req, res) => { 
-  res.send('foo')
-})
-module.exports = router;
