@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const mongoose = require('mongoose');
+
+// Define the User schema
+const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
@@ -16,12 +17,15 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    // validate: {
-    //   validator: function (value) {
-    //     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    //   },
-    //   message: props => `${props.value} is not a valid email address!`,
-    // },
+    trim: true, 
+    lowercase: true,
+    validate: {
+      validator: function (value) {
+        // Basic email validation 
+        return /\S+@\S+\.\S+/.test(value);
+      },
+      message: 'Invalid email address',
+    },
   },
   password: {
     type: String,
@@ -30,6 +34,6 @@ const userSchema = new Schema({
   },
 });
 
-// Export the user model
 const User = mongoose.model('User', userSchema);
+
 module.exports = User;
