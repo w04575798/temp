@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
     }
   });
   
-  // Delete an existing document by Id
+  // Delete an existing document by ID
 router.delete('/:id', async (req, res) => {
   console.log('DELETE /api/book/:id route reached');
   try {
@@ -52,7 +52,7 @@ router.delete('/:id', async (req, res) => {
 
     console.log('Deleted Book:', deletedBook);
 
-    res.sendStatus(200); // Send a simple 200 OK response for successful deletion
+    res.sendStatus(200); // deletion 
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
@@ -60,7 +60,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 //update endpoint
-// Update an existing document by Id
+
 router.put('/:id', async (req, res) => {
   console.log('PUT /api/book/:id route reached');
   try {
@@ -69,7 +69,7 @@ router.put('/:id', async (req, res) => {
     // Update the document based on the request body
     const updatedBook = await Book.findOneAndUpdate({ id }, req.body, { new: true }).exec();
 
-    // Check if the document was found and updated
+ 
     if (!updatedBook) {
       return res.status(404).json({ message: `Document not found for ID: ${id}` });
     }
