@@ -4,6 +4,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../../models/users');
+const jwtMiddleware = require('../../middleware/jwtMiddleware');
 
 // Registration endpoint
 router.post('/register', async (req, res) => {
@@ -51,7 +52,7 @@ router.post('/login', async (req, res) => {
     res.header('x-auth-token', token);
 
     // Send a success response
-    res.status(200).json({ message: 'Login successful' });
+    res.status(200).json({ message: 'Login successful'});
   } catch (error) {
     // Handle errors
     res.status(400).json({ error: error.message });

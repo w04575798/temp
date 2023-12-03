@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Book = require('../../models/book');
-
+const jwtMiddleware = require('../../middleware/jwtMiddleware');
 // Get all documents
 router.get('/', async (req, res) => {
     console.log('GET /api/book route reached');
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
 
 
 // Create new document
-  router.post('/', async (req, res) => {
+  router.post('/',  jwtMiddleware, async (req, res) => {
     try {
       const newBook = new Book(req.body);
       const savedBook = await newBook.save();
@@ -45,7 +45,7 @@ router.get('/:id', async (req, res) => {
   });
   
   // Delete an existing document by ID
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', jwtMiddleware, async (req, res) => {
   console.log('DELETE /api/book/:id route reached');
   try {
     const deletedBook = await Book.findOneAndDelete({ id: req.params.id }).exec();
@@ -61,7 +61,7 @@ router.delete('/:id', async (req, res) => {
 
 //update endpoint
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', jwtMiddleware,async (req, res) => {
   console.log('PUT /api/book/:id route reached');
   try {
     const { id } = req.params;
