@@ -14,7 +14,7 @@ const SignIn = props => {
             console.log(response);
             console.log(response.headers['x-auth-token'])
             localStorage.setItem('token', response.headers['x-auth-token'])
-            // Redirect the user to the Main page
+            // Redirect the user to Main page
         window.location.href = '/';
         }).catch(error => {
             console.error(error);
