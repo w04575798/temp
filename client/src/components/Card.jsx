@@ -12,8 +12,11 @@ const Card = ({ book }) => {
         />
         <div className="card-body">
           <p className="card-text">
-            {/* Displaying book information here */}
-            {`Title: ${book.title}`}
+            {/* Title*/}
+            {`${book.title}`}
+          </p>
+          <p>
+          <small className="text-muted">{`${book.genre}`}</small>
           </p>
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">

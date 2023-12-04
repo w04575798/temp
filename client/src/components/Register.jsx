@@ -12,12 +12,10 @@ const Register = () => {
       .then(response => {
         console.log(response);
         const authToken = response.headers['x-auth-token'];
-
-        // Store the authentication token in Local Storage
         localStorage.setItem('token', authToken);
 
         // Redirect the user to the Main page
-        window.location.href = '/main';
+        window.location.href = '/';
       })
       .catch(error => {
         console.error(error);
