@@ -31,6 +31,10 @@ const bookSchema = new mongoose.Schema({
       message: props => `${props.value} is not a valid published year!`,
     },
   },
+  imageUrl: {
+    type: String,
+    required: true,
+  },
 }, { collection: 'bookCollection' });
 
 module.exports = mongoose.model('Books', bookSchema);

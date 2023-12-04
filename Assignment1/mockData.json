@@ -5,7 +5,8 @@
     "author": "F. Scott Fitzgerald",
     "genre": "Classic",
     "pages": 180,
-    "publishedYear": 1925
+    "publishedYear": 1925,
+    "imageUrl": "https://m.media-amazon.com/images/I/61z0MrB6qOS._SY342_.jpg"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "author": "Harper Lee",
     "genre": "Drama",
     "pages": 281,
-    "publishedYear": 1960
+    "publishedYear": 1960,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "author": "George Orwell",
     "genre": "Dystopian",
     "pages": 328,
-    "publishedYear": 1949
+    "publishedYear": 1949,
+    "imageUrl": "https://m.media-amazon.com/images/I/41aM4xOZxaL._SY445_SX342_.jpg"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "author": "J.R.R. Tolkien",
     "genre": "Fantasy",
     "pages": 310,
-    "publishedYear": 1937
+    "publishedYear": 1937,
+    "imageUrl": "https://i.harperapps.com/covers/9780261103344/y648.jpg"
   },
   {
     "id": 5,
@@ -37,6 +41,52 @@
     "author": "Jane Austen",
     "genre": "Romance",
     "pages": 279,
-    "publishedYear": 1813
+    "publishedYear": 1813,
+    "imageUrl": "https://i.etsystatic.com/28500558/r/il/f5dd6e/3602529809/il_570xN.3602529809_g79f.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Coming-of-age",
+    "pages": 224,
+    "publishedYear": 1951,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/The_Catcher_in_the_Rye_%281951%2C_first_edition_cover%29.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Science Fiction",
+    "pages": 311,
+    "publishedYear": 1932,
+    "imageUrl": "https://m.media-amazon.com/images/I/81zE42gT3xL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 8,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "pages": 1178,
+    "publishedYear": 1954,
+    "imageUrl": "https://s26162.pcdn.co/wp-content/uploads/2017/05/the-lord-of-the-rings-book-cover.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "genre": "Adventure",
+    "pages": 585,
+    "publishedYear": 1851,
+    "imageUrl": "https://m.media-amazon.com/images/I/51j7zrSt+VL._SL500_.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The Shining",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "pages": 447,
+    "publishedYear": 1977,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/The_Shining_%281977%29_front_cover%2C_first_edition.jpg"
   }
 ]
