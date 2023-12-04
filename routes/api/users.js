@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../../models/users');
 const jwtMiddleware = require('../../middleware/jwtMiddleware');
+const cookie = require('cookie')
 
 // Registration endpoint
 router.post('/register', async (req, res) => {

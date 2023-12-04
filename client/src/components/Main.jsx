@@ -4,6 +4,7 @@ import axios from 'axios';
 import '../css/main.css'
 import 'font-awesome/css/font-awesome.min.css';
 
+
 const Main = () => {
   //define state hook to store our data
   const [books, setBook] = useState([])
@@ -39,7 +40,7 @@ const Main = () => {
           <div className="container">
             <div className="row">
                   { 
-                  books.map(book=> { 
+                  books.map((book, index)=> { 
                     return ( 
 
                       <div className="col-md-4">
@@ -59,7 +60,7 @@ const Main = () => {
                               <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
                               <button type="button" className="btn btn-sm btn-outline-secondary">Delete</button>
                             </div>
-                            <small className="text-muted">{book.name}</small>
+                            <small className="text-muted">{book.title}</small>
                           </div>
                         </div>  
                       </div>

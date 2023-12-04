@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 require('dotenv').config();
 var cors = require('cors');
 
+
 // establish connection to MongoDB
 mongoose.connect(process.env.DATABASE_URL);
 
@@ -25,7 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // defining
-app.use(cors());//allow requests from any origin
+app.use(cors({ exposedHeaders: 'x-auth-token',}));//allow requests from any origin
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
