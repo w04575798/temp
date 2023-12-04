@@ -6,9 +6,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 require('dotenv').config();
+var cors = require('cors');
 
-// Connect to MongoDB
-
+// establish connection to MongoDB
 mongoose.connect(process.env.DATABASE_URL);
 
 // Import routers
@@ -17,21 +17,22 @@ const testRouter = require('./routes/api/test');
 const bookRouter = require('./routes/api/book');
 const usersRouter = require('./routes/api/users');
 
-// Create express app
+// define the app
 var app = express();
 
-// Set up view engine
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// Middleware
+// defining
+app.use(cors());//allow requests from any origin
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
+// routes
 app.use('/', indexRouter);
 app.use('/api/test', testRouter);
 app.use('/api/book', bookRouter);
