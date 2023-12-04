@@ -10,6 +10,13 @@ const cookie = require('cookie')
 // Registration endpoint
 router.post('/register', async (req, res) => {
   try {
+    // Check if the user with the given email already exists
+    const existingUser = await User.findOne({ email: req.body.email });
+
+    if (existingUser) {
+      return res.status(400).json({ error: 'User with this email already exists' });
+    }
+
     // Validate and hash the password
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
