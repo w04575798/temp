@@ -8,12 +8,14 @@ const SignIn = props => {
     const { register, handleSubmit} = useForm();
     const sendCredentials = credentials => { 
         console.log(credentials)
-        //use axios to post the collected credentials to the API endpoint
+        
         axios.post('http://localhost:3000/api/users/login', credentials)
         .then(response => { 
             console.log(response);
             console.log(response.headers['x-auth-token'])
             localStorage.setItem('token', response.headers['x-auth-token'])
+            // Redirect the user to the Main page
+        window.location.href = '/';
         }).catch(error => {
             console.error(error);
           });

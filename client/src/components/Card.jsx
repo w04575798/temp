@@ -13,7 +13,7 @@ const Card = ({ book }) => {
         <div className="card-body">
           <p className="card-text">
             {/* Displaying book information here */}
-            {`Author: ${book.author}`}
+            {`Title: ${book.title}`}
           </p>
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">
@@ -27,7 +27,7 @@ const Card = ({ book }) => {
                 Delete
               </button>
             </div>
-            <small className="text-muted">{book.title}</small>
+            <small className="text-muted">{`Author: ${book.author}`}</small>
           </div>
         </div>
       </div>

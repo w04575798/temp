@@ -2,8 +2,10 @@ import React from 'react';
 import NavBar from './components/NavBar';
 import Main from './components/Main';
 import SignIn from './components/SignIn';
+import Register from './components/Register'; 
 import Footer from './components/Footer';
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+
 const App = () => {
   return (
     <React.Fragment>
@@ -12,12 +14,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/signin" element={<SignIn />} />
-
-        </Routes>      
+          <Route path="/register" element={<Register />} />
+        </Routes>
       </div>
       <Footer />
     </React.Fragment>
   );
 }
 
-export default App
+export default App;
