@@ -9,7 +9,7 @@ const Main = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/api/book')
+      .get(`${import.meta.env.VITE_API_URL}/book`)
       .then((response) => {
         console.log(response.data);
         setBooks(response.data);
