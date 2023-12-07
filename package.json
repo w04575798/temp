@@ -24,6 +24,7 @@
     "tr46": "^5.0.0"
   },
   "devDependencies": {
-    "concurrently": "^5.3.0"
+    "concurrently": "^5.3.0",
+    "create-vite": "^5.0.0"
   }
 }
