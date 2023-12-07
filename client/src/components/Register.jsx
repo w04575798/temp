@@ -8,7 +8,7 @@ const Register = () => {
   const registerUser = userData => {
     console.log(userData);
 
-    axios.post(`${import.meta.env.VITE_API_URL}/users/register`, userData)
+    axios.post("http://localhost:3000/api/users/register", userData)
       .then(response => {
         console.log(response);
         const authToken = response.headers['x-auth-token'];

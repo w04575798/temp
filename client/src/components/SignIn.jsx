@@ -9,7 +9,7 @@ const SignIn = props => {
     const sendCredentials = credentials => { 
         console.log(credentials)
         
-        axios.post(`${import.meta.env.VITE_API_URL}/users/login`, credentials)
+        axios.post("http://localhost:3000/api/users/signin", credentials)
         .then(response => { 
             console.log(response);
             console.log(response.headers['x-auth-token'])
